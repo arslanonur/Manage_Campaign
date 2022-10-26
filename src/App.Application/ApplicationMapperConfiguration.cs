@@ -10,7 +10,7 @@ namespace App
         public ApplicationMapperConfiguration()
         {
             CreateProductMaps();
-            CreateCampaignroductMaps();
+            CreateCampaignMaps();
             //CreateFooMaps();
         }
 
@@ -26,7 +26,7 @@ namespace App
             CreateMap<App.Product.Product, ProductEditDto>().ReverseMap();
         }
 
-        private void CreateCampaignroductMaps()
+        private void CreateCampaignMaps()
         {
             CreateMap<App.Campaign.Campaign, CampaignListDto>();
             CreateMap<App.Campaign.Campaign, CampaignEditDto>().ReverseMap();
