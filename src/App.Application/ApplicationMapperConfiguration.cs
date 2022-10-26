@@ -1,4 +1,5 @@
-﻿using App.Campaign.Dto;
+﻿using App.Basket.Dto;
+using App.Campaign.Dto;
 using App.Mapper;
 using App.Product.Dto;
 using AutoMapper;
@@ -11,6 +12,7 @@ namespace App
         {
             CreateProductMaps();
             CreateCampaignMaps();
+            CreateBasketMaps();
             //CreateFooMaps();
         }
 
@@ -30,6 +32,12 @@ namespace App
         {
             CreateMap<App.Campaign.Campaign, CampaignListDto>();
             CreateMap<App.Campaign.Campaign, CampaignEditDto>().ReverseMap();
+        }
+
+        private void CreateBasketMaps()
+        {
+            CreateMap<App.Basket.Basket, BasketListDto>();
+            CreateMap<App.Basket.Basket, BasketEditDto>().ReverseMap();
         }
 
         public int Order => 0;

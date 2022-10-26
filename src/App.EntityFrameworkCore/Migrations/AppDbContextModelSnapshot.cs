@@ -19,6 +19,39 @@ namespace App.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("App.Basket.Basket", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CampaignId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DiscountPrice")
+                        .HasColumnType("int");
+
+                    b.Property<double>("DiscountedPrice")
+                        .HasColumnType("float");
+
+                    b.Property<string>("OrderCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ProductCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("TotalDiscountedPrice")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Basket");
+                });
+
             modelBuilder.Entity("App.Campaign.Campaign", b =>
                 {
                     b.Property<int>("Id")
@@ -31,6 +64,9 @@ namespace App.Migrations
 
                     b.Property<int>("CampaignLevel")
                         .HasColumnType("int");
+
+                    b.Property<string>("CampaignLevelName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CampaignName")
                         .HasColumnType("nvarchar(max)");
@@ -55,7 +91,7 @@ namespace App.Migrations
                     b.ToTable("Campaign");
                 });
 
-            modelBuilder.Entity("App.Campaign.Product", b =>
+            modelBuilder.Entity("App.Product.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

@@ -4,6 +4,7 @@ using App.Campaign;
 using App.Product;
 using App.Reflection;
 using Autofac;
+using App.Basket;
 
 namespace App
 {
@@ -17,6 +18,10 @@ namespace App
 
             builder.RegisterType<CampaignAppService>()
                 .As<ICampaignAppService>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<BasketAppService>()
+                .As<IBasketAppService>()
                 .InstancePerLifetimeScope();
         }
 

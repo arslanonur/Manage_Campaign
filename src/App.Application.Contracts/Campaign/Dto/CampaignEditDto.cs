@@ -17,5 +17,6 @@ namespace App.Campaign.Dto
         public DateTime EndDate { get; set; }
         public bool isActive { get; set; }
         public int QuantityPerBasket { get; set; }
+        public string CampaignLevelName { get; set; }
     }
 }
