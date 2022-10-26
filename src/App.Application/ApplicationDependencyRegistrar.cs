@@ -1,5 +1,6 @@
 ﻿using App.Configuration;
 using App.Dependency;
+using App.Campaign;
 using App.Product;
 using App.Reflection;
 using Autofac;
@@ -12,6 +13,10 @@ namespace App
         {
             builder.RegisterType<ProductAppService>()
                 .As<IProductAppService>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<CampaignAppService>()
+                .As<ICampaignAppService>()
                 .InstancePerLifetimeScope();
         }
 

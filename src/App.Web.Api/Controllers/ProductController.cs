@@ -16,12 +16,13 @@ namespace App.Web.Controllers
             _productAppService = productAppService;
         }
 
+        [Route("GetAll")]
         [HttpGet]
         public List<ProductListDto> GetAll()
         {
             return _productAppService.GetAll();
         }
-
+                
         [HttpGet("{id:int}")]
         public ProductListDto GetForView(int id)
         {

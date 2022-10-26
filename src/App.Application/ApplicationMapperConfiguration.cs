@@ -1,4 +1,5 @@
-﻿using App.Mapper;
+﻿using App.Campaign.Dto;
+using App.Mapper;
 using App.Product.Dto;
 using AutoMapper;
 
@@ -9,6 +10,7 @@ namespace App
         public ApplicationMapperConfiguration()
         {
             CreateProductMaps();
+            CreateCampaignroductMaps();
             //CreateFooMaps();
         }
 
@@ -22,6 +24,12 @@ namespace App
         {
             CreateMap<App.Product.Product, ProductListDto>();
             CreateMap<App.Product.Product, ProductEditDto>().ReverseMap();
+        }
+
+        private void CreateCampaignroductMaps()
+        {
+            CreateMap<App.Campaign.Campaign, CampaignListDto>();
+            CreateMap<App.Campaign.Campaign, CampaignEditDto>().ReverseMap();
         }
 
         public int Order => 0;

@@ -62,5 +62,6 @@ namespace App.Product
                 _productRepository.Update(entity);
             }
         }
+
     }
 }
