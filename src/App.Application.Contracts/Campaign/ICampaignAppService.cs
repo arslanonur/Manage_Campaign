@@ -5,6 +5,7 @@ using App.Campaign.Enum;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using App.Product.Dto;
 
 namespace App.Campaign
 {
@@ -20,7 +21,10 @@ namespace App.Campaign
 
         void CreateOrEdit(CampaignEditDto editDto);
 
-        //ProductListDto GetProductByLevelId(List<ProductListDto> productList, EnumCampaignLevel campaignLevel);
+        CampaignListDto CalcCampaign(ProductListDto product);
+
+        //Web socket ile EndDate e göre kontrol edilip passive yapılacak
+        void SetPassive(int campaignId);
     }
 }
 

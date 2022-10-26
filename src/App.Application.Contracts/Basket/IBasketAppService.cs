@@ -18,5 +18,7 @@ namespace App.Basket
 
         void CreateOrEdit(BasketEditDto editDto);
 
+        CalculatedBasketList GetByOrderCode(string orderCode);
+
     }
 }

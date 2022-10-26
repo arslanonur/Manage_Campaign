@@ -17,6 +17,8 @@ namespace App.Product
         void DeleteAll();
 
         void CreateOrEdit(ProductEditDto editDto);
+
+        ProductListDto GetByProductCode(string productCode);
     }
 }
 

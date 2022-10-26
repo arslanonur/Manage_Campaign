@@ -3,10 +3,11 @@ using App.Campaign;
 using App.Web.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using App.Product.Dto;
 
 namespace App.Web.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class CampaignController : AppApiControllerBase, ICampaignAppService
     {
         private readonly ICampaignAppService _campaignAppService;
@@ -14,6 +15,12 @@ namespace App.Web.Controllers
         public CampaignController(ICampaignAppService campaignAppService)
         {
             _campaignAppService = campaignAppService;
+        }
+
+        [HttpPost]
+        public CampaignListDto CalcCampaign(ProductListDto product)
+        {
+            return _campaignAppService.CalcCampaign(product);
         }
 
         [HttpPost]
@@ -46,5 +53,10 @@ namespace App.Web.Controllers
             return _campaignAppService.GetForView(id);
         }
 
+        [HttpPost]
+        public void SetPassive(int campaignId)
+        {
+            _campaignAppService.SetPassive(campaignId);
+        }
     }
 }

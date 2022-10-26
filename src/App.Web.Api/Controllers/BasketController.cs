@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace App.Web.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class BasketController : AppApiControllerBase, IBasketAppService
     {
         private readonly IBasketAppService _basketAppService;
@@ -45,6 +45,13 @@ namespace App.Web.Controllers
         public BasketListDto GetForView(int id)
         {
             return _basketAppService.GetForView(id);
+        }
+
+        [HttpPost]
+        public CalculatedBasketList GetByOrderCode(string orderCode)
+        {
+            return _basketAppService.GetByOrderCode(orderCode);
+
         }
     }
 }

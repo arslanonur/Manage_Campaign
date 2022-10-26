@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace App.Web.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class ProductController : AppApiControllerBase, IProductAppService
     {
         private readonly IProductAppService _productAppService;
@@ -16,7 +16,6 @@ namespace App.Web.Controllers
             _productAppService = productAppService;
         }
 
-        [Route("GetAll")]
         [HttpGet]
         public List<ProductListDto> GetAll()
         {
@@ -45,6 +44,12 @@ namespace App.Web.Controllers
         public void CreateOrEdit(ProductEditDto editDto)
         {
             _productAppService.CreateOrEdit(editDto);
+        }
+
+        [HttpGet]        
+        public ProductListDto GetByProductCode(string productCode)
+        {
+            return _productAppService.GetByProductCode(productCode);
         }
     }
 }

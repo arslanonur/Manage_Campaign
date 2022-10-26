@@ -1,4 +1,5 @@
-﻿using App.Domain.Repositories;
+﻿using App.Basket.Dto;
+using App.Domain.Repositories;
 using App.Mapper;
 using App.Product.Dto;
 using Microsoft.Extensions.Logging;
@@ -63,5 +64,11 @@ namespace App.Product
             }
         }
 
+        public ProductListDto GetByProductCode(string productCode)
+        {
+           return GetAll().Where(x => x.ProductCode == productCode).FirstOrDefault();
+        }
+
+        
     }
 }
