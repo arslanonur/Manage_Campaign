@@ -125,3 +125,16 @@ Sipariş numarası (orderCode) verilerek ilgili sepetteki ürünlerin ve kampany
 Toplam indirimli fiyat response data içerisindeki "TotalDiscountedPrice" alanıdır.
 
 
+#### Kampanya Passive Yapma
+
+```http
+  GET /api/Campaign/SetPassive
+```
+
+Örnek Data:
+```
+> {
+      "campaignId" = 1
+  }
+```
+
