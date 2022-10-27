@@ -1,8 +1,8 @@
 
 
-# HepsiBurada Kampanya Yönetimi
+# Kampanya Yönetimi
 
-Bu proje HepsiBurada tarafından gönderilen caseler göz önüne alınarak oluşturulmuş bir API projesidir.
+Bu proje aşağıdaki caseler göz önüne alınarak oluşturulmuş bir API projesidir.
 
 
 Domainde kampanyalarınız olacaktır ve bu kampanyaların sepetten gelen ürünlere göre hesaplanıp hesaplanıp cevap olarak sepetteki ürünleri 
